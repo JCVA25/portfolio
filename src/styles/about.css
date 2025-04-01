@@ -1,0 +1,173 @@
+/* About Section Styles */
+.about {
+  padding: 8rem 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.highlight {
+  color: var(--primary-color);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-info h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.about-description {
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Tech Stack Styles */
+.tech-stack {
+  margin-bottom: 3rem;
+}
+
+.tech-stack h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 238, 255, 0.15);
+}
+
+.tech-item i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.tech-item span {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Contact Button */
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #00c4d4;
+  transform: translateY(-2px);
+}
+
+.contact-btn i {
+  transition: transform 0.3s ease;
+}
+
+.contact-btn:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 6rem 0;
+  }
+
+  .about-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .tech-item {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .tech-item {
+    padding: 0.8rem;
+  }
+
+  .tech-item i {
+    font-size: 2rem;
+  }
+
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+} 

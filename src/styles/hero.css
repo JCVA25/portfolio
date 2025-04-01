@@ -1,0 +1,264 @@
+/* Theme Variables */
+:root {
+  --dark-bg: #1a1a1a;
+  --dark-text: #ffffff;
+  --dark-highlight: #64ffda;
+  --dark-secondary: #a8b2d1;
+  --dark-gradient-start: #64ffda;
+  --dark-gradient-end: #00bfa5;
+  
+  --light-bg: #f5f5f5;
+  --light-text: #2d2d2d;
+  --light-highlight: #00897b;
+  --light-secondary: #455a64;
+  --light-gradient-start: #00897b;
+  --light-gradient-end: #00695c;
+}
+
+/* Hero Section Styles */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.hero.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.hero.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.dark .theme-toggle {
+  color: var(--dark-highlight);
+}
+
+.light .theme-toggle {
+  color: var(--light-highlight);
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg);
+}
+
+/* Rest of the existing styles with theme support */
+.highlight {
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.dark .highlight {
+  color: var(--dark-highlight);
+}
+
+.light .highlight {
+  color: var(--light-highlight);
+}
+
+.name {
+  font-size: 4.5rem;
+  font-weight: 700;
+  display: inline-block;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .name {
+  background: linear-gradient(45deg, var(--dark-gradient-start), var(--dark-gradient-end));
+}
+
+.light .name {
+  background: linear-gradient(45deg, var(--light-gradient-start), var(--light-gradient-end));
+}
+
+.role {
+  font-size: 2.5rem;
+  display: block;
+  margin-top: 2rem;
+}
+
+.dark .role {
+  color: var(--dark-secondary);
+}
+
+.light .role {
+  color: var(--light-secondary);
+}
+
+.social-link {
+  transition: all 0.3s ease;
+}
+
+.dark .social-link {
+  color: var(--dark-highlight);
+}
+
+.light .social-link {
+  color: var(--light-highlight);
+}
+
+.dark .social-link:hover {
+  color: var(--dark-gradient-end);
+}
+
+.light .social-link:hover {
+  color: var(--light-gradient-end);
+}
+
+.image-container {
+  border-radius: 50%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dark .image-container {
+  border: 3px solid var(--dark-highlight);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.light .image-container {
+  border: 3px solid var(--light-highlight);
+  box-shadow: 0 0 20px rgba(0, 137, 123, 0.3);
+}
+
+/* Update animation for both themes */
+@keyframes nameAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.dark .animate-name {
+  animation: nameAnimation 2s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
+}
+
+.light .animate-name {
+  animation: nameAnimation 2s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(0, 137, 123, 0.5);
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.4;
+  margin-bottom: 3rem;
+}
+
+.name-wrapper {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: left;
+  gap: 2.5rem;
+}
+
+.animate-name {
+  animation: nameAnimation 2s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 6rem;
+  }
+
+  .hero {
+    padding: 6rem 2rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .name-wrapper {
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .name {
+    font-size: 3.5rem;
+  }
+
+  .role {
+    font-size: 2rem;
+  }
+
+  .image-container {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-container {
+    gap: 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .name-wrapper {
+    gap: 1.5rem;
+  }
+
+  .name {
+    font-size: 3rem;
+  }
+
+  .role {
+    font-size: 1.8rem;
+  }
+
+  .image-container {
+    width: 200px;
+    height: 200px;
+  }
+} 

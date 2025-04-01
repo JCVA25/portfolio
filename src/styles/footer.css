@@ -1,0 +1,125 @@
+/* Footer Styles */
+.footer {
+  background-color: #1a1a1a;
+  padding: 3rem 0;
+  color: white;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-circle {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-circle:hover {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+/* Location */
+.footer-location {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Contact Links */
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.contact-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Footer Text */
+.footer-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 2.5rem 0;
+  }
+
+  .footer-content {
+    gap: 1.25rem;
+  }
+
+  .social-circle {
+    width: 35px;
+    height: 35px;
+    font-size: 1.1rem;
+  }
+
+  .footer-location,
+  .footer-text {
+    font-size: 1rem;
+  }
+
+  .contact-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0;
+  }
+
+  .footer-content {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .social-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .footer-location,
+  .footer-text {
+    font-size: 0.95rem;
+  }
+
+  .contact-link {
+    font-size: 0.85rem;
+  }
+} 
