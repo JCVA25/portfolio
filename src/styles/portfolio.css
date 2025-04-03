@@ -75,6 +75,7 @@
 
 .project-features {
   margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
 
 .project-features h4 {
@@ -86,6 +87,7 @@
 .project-features ul {
   list-style: none;
   padding-left: 0;
+  transition: all 0.3s ease;
 }
 
 .project-features li {
@@ -93,6 +95,16 @@
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   position: relative;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.3s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-features li:before {
@@ -116,6 +128,24 @@
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+.more-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.more-btn:hover {
+  background: var(--primary-color);
+  color: #1a1a1a;
+  transform: translateY(-2px);
 }
 
 /* Responsive Design */

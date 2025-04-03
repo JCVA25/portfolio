@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles/main.css';
-import './styles/animations.css';
+import './styles/hero.css';
 import './styles/about.css';
 import './styles/portfolio.css';
 import './styles/contact.css';

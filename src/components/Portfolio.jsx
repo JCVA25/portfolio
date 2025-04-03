@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Portfolio = () => {
+  const [expandedProjects, setExpandedProjects] = useState({});
+
+  const toggleProject = (index) => {
+    setExpandedProjects(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const projects = [
     {
       title: "Carsada",
@@ -10,7 +19,10 @@ const Portfolio = () => {
       features: [
         "Easy to use interface",
         "Fixed fare system",
-        "Destination notification alerts"
+        "Destination notification alerts",
+        "Real-time tracking",
+        "Multiple payment options",
+        "Driver ratings and reviews"
       ]
     },
     {
@@ -25,7 +37,10 @@ const Portfolio = () => {
         "Announcements System",
         "Notifications Center",
         "Messaging System",
-        "Events Management"
+        "Events Management",
+        "Member Profiles",
+        "Club Analytics",
+        "Resource Sharing"
       ]
     }
   ];
@@ -49,10 +64,18 @@ const Portfolio = () => {
                 <div className="project-features">
                   <h4>Key Features:</h4>
                   <ul>
-                    {project.features.map((feature, featureIndex) => (
+                    {project.features.slice(0, expandedProjects[index] ? project.features.length : 3).map((feature, featureIndex) => (
                       <li key={featureIndex}>{feature}</li>
                     ))}
                   </ul>
+                  {project.features.length > 3 && (
+                    <button 
+                      className="more-btn"
+                      onClick={() => toggleProject(index)}
+                    >
+                      {expandedProjects[index] ? 'Show Less' : 'Show More'}
+                    </button>
+                  )}
                 </div>
                 <div className="project-tech">
                   {project.technologies.map((tech, techIndex) => (

@@ -1,20 +1,3 @@
-/* Theme Variables */
-:root {
-  --dark-bg: #1a1a1a;
-  --dark-text: #ffffff;
-  --dark-highlight: #64ffda;
-  --dark-secondary: #a8b2d1;
-  --dark-gradient-start: #64ffda;
-  --dark-gradient-end: #00bfa5;
-  
-  --light-bg: #f5f5f5;
-  --light-text: #2d2d2d;
-  --light-highlight: #00897b;
-  --light-secondary: #455a64;
-  --light-gradient-start: #00897b;
-  --light-gradient-end: #00695c;
-}
-
 /* Hero Section Styles */
 .hero {
   min-height: 100vh;
@@ -22,148 +5,9 @@
   align-items: center;
   justify-content: center;
   padding: 8rem 2rem;
+  background-color: #1a1a1a;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.hero.dark {
-  background-color: var(--dark-bg);
-  color: var(--dark-text);
-}
-
-.hero.light {
-  background-color: var(--light-bg);
-  color: var(--light-text);
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.dark .theme-toggle {
-  color: var(--dark-highlight);
-}
-
-.light .theme-toggle {
-  color: var(--light-highlight);
-}
-
-.theme-toggle:hover {
-  transform: rotate(180deg);
-}
-
-/* Rest of the existing styles with theme support */
-.highlight {
-  display: block;
-  margin-bottom: 2rem;
-}
-
-.dark .highlight {
-  color: var(--dark-highlight);
-}
-
-.light .highlight {
-  color: var(--light-highlight);
-}
-
-.name {
-  font-size: 4.5rem;
-  font-weight: 700;
-  display: inline-block;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.dark .name {
-  background: linear-gradient(45deg, var(--dark-gradient-start), var(--dark-gradient-end));
-}
-
-.light .name {
-  background: linear-gradient(45deg, var(--light-gradient-start), var(--light-gradient-end));
-}
-
-.role {
-  font-size: 2.5rem;
-  display: block;
-  margin-top: 2rem;
-}
-
-.dark .role {
-  color: var(--dark-secondary);
-}
-
-.light .role {
-  color: var(--light-secondary);
-}
-
-.social-link {
-  transition: all 0.3s ease;
-}
-
-.dark .social-link {
-  color: var(--dark-highlight);
-}
-
-.light .social-link {
-  color: var(--light-highlight);
-}
-
-.dark .social-link:hover {
-  color: var(--dark-gradient-end);
-}
-
-.light .social-link:hover {
-  color: var(--light-gradient-end);
-}
-
-.image-container {
-  border-radius: 50%;
-  overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-.dark .image-container {
-  border: 3px solid var(--dark-highlight);
-  box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
-}
-
-.light .image-container {
-  border: 3px solid var(--light-highlight);
-  box-shadow: 0 0 20px rgba(0, 137, 123, 0.3);
-}
-
-/* Update animation for both themes */
-@keyframes nameAnimation {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-.dark .animate-name {
-  animation: nameAnimation 2s ease-in-out infinite;
-  text-shadow: 0 0 10px rgba(100, 255, 218, 0.5);
-}
-
-.light .animate-name {
-  animation: nameAnimation 2s ease-in-out infinite;
-  text-shadow: 0 0 10px rgba(0, 137, 123, 0.5);
 }
 
 .hero-container {
@@ -181,20 +25,154 @@
 }
 
 .hero-title {
-  font-size: 4rem;
-  line-height: 1.4;
+  font-size: 2.4rem;
+  line-height: .7;
   margin-bottom: 3rem;
+}
+
+.highlight {
+  color: #64ffda;
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 2rem;
 }
 
 .name-wrapper {
   margin: 2rem 0;
   display: flex;
-  justify-content: left;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
-.animate-name {
-  animation: nameAnimation 2s ease-in-out infinite;
+.name-wrapper .name:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.name {
+  font-size: 4rem;
+  font-weight: 700;
+  display: inline-block;
+  background: linear-gradient(45deg, #64ffda, #00bfa5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* Add typing animation keyframes */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-right-color: transparent;
+  }
+}
+
+.role {
+  font-size: 2.5rem;
+  color: #a8b2d1;
+  display: block;
+  margin-top: 2rem;
+  min-height: 3rem;
+  border-right: 2px solid #64ffda;
+  animation: blink .75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content;
+}
+
+@keyframes changeRole {
+  0%, 45% {
+    content: "Frontend Developer";
+  }
+  50%, 95% {
+    content: "UI/UX Designer";
+  }
+  100% {
+    content: "Frontend Developer";
+  }
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.image-container {
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #64ffda;
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+  50% {
+    transform: translateY(-20px);
+    box-shadow: 0 0 30px rgba(100, 255, 218, 0.5);
+  }
+  100% {
+    transform: translateY(0px);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+  }
+}
+
+.image-container img {
+  width: 105%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+.social-links-container {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.social-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.social-links a {
+  color: #64ffda;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00bfa5;
+  transform: translateY(-5px);
+}
+
+/* Add bounce animation keyframes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /* Responsive Design */
@@ -213,11 +191,6 @@
     font-size: 3rem;
   }
 
-  .name-wrapper {
-    justify-content: center;
-    gap: 2rem;
-  }
-
   .name {
     font-size: 3.5rem;
   }
@@ -229,6 +202,18 @@
   .image-container {
     width: 250px;
     height: 250px;
+  }
+
+  .social-links-container {
+    justify-content: center;
+  }
+
+  .social-links {
+    gap: 2.5rem;
+  }
+
+  .social-links a {
+    font-size: 1.8rem;
   }
 }
 
@@ -245,10 +230,6 @@
     font-size: 2.5rem;
   }
 
-  .name-wrapper {
-    gap: 1.5rem;
-  }
-
   .name {
     font-size: 3rem;
   }
@@ -260,5 +241,13 @@
   .image-container {
     width: 200px;
     height: 200px;
+  }
+
+  .social-links {
+    gap: 2rem;
+  }
+
+  .social-links a {
+    font-size: 1.6rem;
   }
 } 

@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-text">
-          Portfolio.
+          2025 John Carlo.
         </div>
       </div>
     </footer>
