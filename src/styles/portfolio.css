@@ -157,27 +157,31 @@
 
 @media (max-width: 768px) {
   .portfolio {
-    padding: 6rem 0;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
-  .project-image {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .portfolio {
     padding: 4rem 0;
+  }
+
+  .portfolio-container {
+    padding: 0 1rem;
   }
 
   .section-title {
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .project-card {
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .project-image {
+    height: 200px;
   }
 
   .project-info {
@@ -186,6 +190,10 @@
 
   .project-info h3 {
     font-size: 1.3rem;
+  }
+
+  .project-info p {
+    font-size: 0.95rem;
   }
 
   .project-features h4 {
@@ -198,6 +206,59 @@
 
   .tech-tag {
     padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .more-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio {
+    padding: 3rem 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-info {
+    padding: 1.2rem;
+  }
+
+  .project-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+  }
+
+  .project-features h4 {
+    font-size: 1rem;
+  }
+
+  .project-features li {
+    font-size: 0.85rem;
+  }
+
+  .tech-tag {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .more-btn {
+    padding: 0.3rem 0.6rem;
     font-size: 0.8rem;
   }
 } 

@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 0;
+  }
+
+  .nav-container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
+
+  .nav-container {
+    padding: 0 0.8rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .nav-link {
+    font-size: 0.85rem;
+  }
+} 
